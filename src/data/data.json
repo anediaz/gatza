@@ -12,23 +12,23 @@
     {
       "id": "liburua",
       "text": "Liburua",
-      "path": "/menu/liburua"
+      "path": "/liburua"
     },
 
     {
       "id": "makingof",
       "text": "Making Of",
-      "path": "/menu/makingof"
+      "path": "/makingof"
     },
     {
       "id": "berriak",
       "text": "Berriak",
-      "path": "/menu/berriak"
+      "path": "/berriak"
     },
     {
       "id": "info",
       "text": "Info",
-      "path": "/menu/info"
+      "path": "/info"
     }
   ],
   "berriak": {
@@ -36,36 +36,36 @@
     "albisteak": [
       {
         "title": "2014/10/03",
-        "img": "/news/goiena1.png",
+        "img": "news/goiena1.png",
         "src": "https://farm6.staticflickr.com/5625/30669747305_c51d22ae66_o.png",
         "id": "31764384476"
       },
       {
         "title": "2015/05/15",
-        "img": "/news/goiena2.png",
+        "img": "news/goiena2.png",
         "id": ""
       },
       {
         "title": "2015/05/29",
-        "img": "/news/goiena3.png",
+        "img": "news/goiena3.png",
         "src": "https://farm1.staticflickr.com/255/31685194221_08e3696186_o.jpg",
         "id": "31685194221"
       },
       {
         "title": "2015/06/04",
-        "img": "/news/mondraberri.png",
+        "img": "news/mondraberri.png",
         "src": "https://farm1.staticflickr.com/616/31432955160_b87fa3d073_o.jpg",
         "id": "31432955160"
       },
       {
         "title": "2015/06/05",
-        "img": "/news/puntua.png",
+        "img": "news/puntua.png",
         "src": "https://farm1.staticflickr.com/402/31801382175_40488c157c_o.jpg",
         "id": "31801382175"
       },
       {
         "title": "2015/06/07",
-        "img": "/news/noticiasDeGipuzkoa.png",
+        "img": "news/noticiasDeGipuzkoa.png",
         "src": "https://farm1.staticflickr.com/310/31801386475_57d004aab0_o.jpg",
         "id": "31801386475"
       }
@@ -73,7 +73,7 @@
   },
   "liburua": {
     "url": "http://e.issuu.com/embed.html#29935047/49686996",
-    "src": "/liburua.png",
+    "src": "liburua.png",
     "title": "Liburua ikusi",
     "alt": "Liburua"
   },

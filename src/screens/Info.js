@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import LanguageSelector from "../components/LanguageSelector";
-import data from "../data/data";
+import { info } from "../data/data";
 
 const Wrapper = styled.div`
-  margin-top: 0.1rem;
+  margin-top: 0.2rem;
   padding-top: 2rem;
   height: 100%;
   background-color: black;
@@ -99,7 +99,6 @@ const A = styled.a`
   color: white;
 `;
 const Info = () => {
-  const { info } = data;
   const { more } = info;
   const [language, setLanguage] = useState("EU");
   const languageClickHandler = selectedLanguage =>

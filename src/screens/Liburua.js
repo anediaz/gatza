@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import data from "../data/data.json";
+import { liburua } from "../data/data.json";
 
 const Wrapper = styled.div`
   text-align: center;
@@ -17,11 +17,14 @@ const Img = styled.img`
   }
 `;
 
-const { liburua } = data;
 const Liburua = () => (
   <Wrapper>
     <a href={liburua.url} target="_blank" rel="noopener noreferrer">
-      <Img src={liburua.src} title={liburua.title} alt={liburua.alt} />
+      <Img
+        src={`${process.env.PUBLIC_URL}/${liburua.src}`}
+        title={liburua.title}
+        alt={liburua.alt}
+      />
     </a>
   </Wrapper>
 );

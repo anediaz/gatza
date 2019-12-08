@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { BrowserRouter, Route } from "react-router-dom";
-import Xeheki from "./Xeheki";
+import { HashRouter, Route } from "react-router-dom";
 import Liburua from "./Liburua";
 import Info from "./Info";
 import Berriak from "./Berriak";
 import Menu from "../components/Menu";
-import data from "../data/data.json";
+import { home, makingof, menu } from "../data/data.json";
 import { Wrapper } from "../components/Gallery";
 import PhotoLoader from "../components/PhotoLoader";
 import Gallery from "../components/Gallery";
@@ -49,13 +48,13 @@ const Logo = styled.div`
 const LogoTitle = styled.div`
   height: 4rem;
   padding: 0.5rem 0;
-  content: url("gatza.png");
+  content: url("./gatza.png");
   margin: 0 auto;
   :before {
     height: 4rem;
     width: 241px;
     padding: 0.5rem 0;
-    background-image: url("gatza.png");
+    background-image: url("./gatza.png");
     background-size: auto 4rem;
     display: inline-block;
     content: "";
@@ -98,46 +97,45 @@ const Page = () => {
     { maxWidth: 479, cols: 4, margin: 1 }
   ];
   return (
-    <BrowserRouter>
+    <HashRouter>
       <PageWrapper>
         <Header>
           <Logo>
             <LogoTitle />
           </Logo>
-          <Menu items={data.menu} />
+          <Menu items={menu} />
         </Header>
         <Container>
           <Route
             exact
-            path="/"
+            path={menu[0].path}
             render={() => (
               <PhotoLoader
-                photosetId={data.home}
-                photos={photosets[data.home]}
+                photosetId={home}
+                photos={photosets[home]}
                 setPhotos={setPhotos}
                 Component={Gallery}
               />
             )}
           />
-          <Route path="/menu/liburua" component={Liburua} />
-          <Route path="/menu/xeheki" component={Xeheki} />
+          <Route path={menu[1].path} component={Liburua} />
           <Route
-            path="/menu/makingof"
+            path={menu[2].path}
             render={() => (
               <PhotoLoader
-                photosetId={data.makingof}
-                photos={photosets[data.makingof]}
+                photosetId={makingof}
+                photos={photosets[makingof]}
                 setPhotos={setPhotos}
                 Component={Gallery2}
                 configurations={configurations}
               />
             )}
           />
-          <Route path="/menu/berriak" component={Berriak} />
-          <Route path="/menu/info" component={Info} />
+          <Route path={menu[3].path} component={Berriak} />
+          <Route path={menu[4].path} component={Info} />
         </Container>
       </PageWrapper>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 

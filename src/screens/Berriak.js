@@ -1,14 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 
-import data from "../data/data";
+import { berriak } from "../data/data";
 
 const Wrapper = styled.div`
   background-color: black;
 `;
 
 const Header = styled.div`
-  margin-top: 0.1rem;
+  margin-top: 0.2rem;
   height: 1rem;
 `;
 
@@ -70,7 +70,7 @@ const Berriak = () => {
       <Header />
       <VideoDisplayer>
         <iframe
-          src={data.berriak.videoUrl}
+          src={berriak.videoUrl}
           frameBorder="0"
           allowFullScreen
           title="videoDisplayer"
@@ -78,9 +78,9 @@ const Berriak = () => {
       </VideoDisplayer>
       <ClickableList>
         <Content>
-          {data.berriak.albisteak.map((item, index) => (
+          {berriak.albisteak.map((item, index) => (
             <Img
-              src={item.img}
+              src={`${process.env.PUBLIC_URL}/${item.img}`}
               key={index}
               onClick={() => openImg(item.src)}
               alt=""

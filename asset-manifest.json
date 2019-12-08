@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.js": "/gatza/static/js/main.83fb9bde.chunk.js",
+    "main.js.map": "/gatza/static/js/main.83fb9bde.chunk.js.map",
+    "runtime~main.js": "/gatza/static/js/runtime~main.86911e4e.js",
+    "runtime~main.js.map": "/gatza/static/js/runtime~main.86911e4e.js.map",
+    "static/js/2.0a699463.chunk.js": "/gatza/static/js/2.0a699463.chunk.js",
+    "static/js/2.0a699463.chunk.js.map": "/gatza/static/js/2.0a699463.chunk.js.map",
+    "index.html": "/gatza/index.html",
+    "precache-manifest.92bda8cc260a6644304cff6a86bd80bf.js": "/gatza/precache-manifest.92bda8cc260a6644304cff6a86bd80bf.js",
+    "service-worker.js": "/gatza/service-worker.js"
+  }
+}

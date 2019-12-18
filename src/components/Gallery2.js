@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect } from "react";
+import React, { Fragment, useState, useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 import _ from "underscore";
 import styled from "styled-components";
@@ -56,8 +56,7 @@ const Item = styled.img`
 const DEFAULT_COLS = 7;
 const DEFAULT_MARGIN = 1;
 
-const getChosenConfiguration = configurations => {
-  const { innerWidth: width, innerHeight: height } = window;
+const getChosenConfiguration = (configurations, width) => {
   const propsConfiguration = configurations.find(
     c =>
       ((c.minWidth && c.minWidth <= width) || !c.minWidth) &&
@@ -65,24 +64,28 @@ const getChosenConfiguration = configurations => {
   );
   return {
     width,
-    height,
     cols: propsConfiguration ? propsConfiguration.cols : DEFAULT_COLS,
     margin: propsConfiguration ? propsConfiguration.margin : DEFAULT_MARGIN
   };
 };
 
 const Gallery2 = ({ photos, photoInfos, configurations }) => {
+  const ref = useRef(null);
   const [selectedImgId, setSelectedImgId] = useState(null);
-  const [configuration, setConfiguration] = useState(
-    getChosenConfiguration(configurations)
-  );
+  const [configuration, setConfiguration] = useState(null);
 
+  const getWidth = () => {
+    const width = ref.current ? ref.current.offsetWidth : 0;
+    return width;
+  };
   useEffect(() => {
     const handleResize = _.debounce(
-      () => setConfiguration(getChosenConfiguration(configurations)),
+      () =>
+        setConfiguration(getChosenConfiguration(configurations, getWidth())),
       400
     );
     window.addEventListener("resize", handleResize);
+    setConfiguration(getChosenConfiguration(configurations, getWidth()));
     return () => window.removeEventListener("resize", handleResize);
   }, [configurations]);
 
@@ -124,7 +127,7 @@ const Gallery2 = ({ photos, photoInfos, configurations }) => {
 
   const chunks = getChunks(photos);
   return (
-    <Wrapper>
+    <Wrapper ref={ref}>
       {photos.length ? (
         <Fragment>
           {chunks.map((chunk, chunkIndex) => (

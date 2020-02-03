@@ -1,13 +1,19 @@
 {
   "files": {
-    "main.js": "/gatza/static/js/main.83fb9bde.chunk.js",
-    "main.js.map": "/gatza/static/js/main.83fb9bde.chunk.js.map",
-    "runtime~main.js": "/gatza/static/js/runtime~main.86911e4e.js",
-    "runtime~main.js.map": "/gatza/static/js/runtime~main.86911e4e.js.map",
-    "static/js/2.0a699463.chunk.js": "/gatza/static/js/2.0a699463.chunk.js",
-    "static/js/2.0a699463.chunk.js.map": "/gatza/static/js/2.0a699463.chunk.js.map",
+    "main.js": "/gatza/static/js/main.52dda029.chunk.js",
+    "main.js.map": "/gatza/static/js/main.52dda029.chunk.js.map",
+    "runtime-main.js": "/gatza/static/js/runtime-main.c83952a1.js",
+    "runtime-main.js.map": "/gatza/static/js/runtime-main.c83952a1.js.map",
+    "static/js/2.804f9c9f.chunk.js": "/gatza/static/js/2.804f9c9f.chunk.js",
+    "static/js/2.804f9c9f.chunk.js.map": "/gatza/static/js/2.804f9c9f.chunk.js.map",
     "index.html": "/gatza/index.html",
-    "precache-manifest.92bda8cc260a6644304cff6a86bd80bf.js": "/gatza/precache-manifest.92bda8cc260a6644304cff6a86bd80bf.js",
-    "service-worker.js": "/gatza/service-worker.js"
-  }
+    "precache-manifest.89c609f4d84327750014f483da26dc4d.js": "/gatza/precache-manifest.89c609f4d84327750014f483da26dc4d.js",
+    "service-worker.js": "/gatza/service-worker.js",
+    "static/js/2.804f9c9f.chunk.js.LICENSE": "/gatza/static/js/2.804f9c9f.chunk.js.LICENSE"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c83952a1.js",
+    "static/js/2.804f9c9f.chunk.js",
+    "static/js/main.52dda029.chunk.js"
+  ]
 }

@@ -20,7 +20,8 @@ const propTypes = {
     big: PropTypes.string.isRequired,
     width: PropTypes.string.isRequired,
     height: PropTypes.string.isRequired
-  }).isRequired
+  }).isRequired,
+  withLightbox: PropTypes.bool
 };
 
 const defaultProps = {
@@ -28,7 +29,8 @@ const defaultProps = {
     { maxWidth: 340, cols: 4, margin: 1 },
     { maxWidth: 1024, cols: 6, margin: 1 },
     { minWidth: 1025, cols: 12, margin: 1 }
-  ]
+  ],
+  withLightbox: true
 };
 
 const Wrapper = styled.div`
@@ -58,25 +60,24 @@ const DEFAULT_MARGIN = 1;
 
 const getChosenConfiguration = (configurations, width) => {
   const propsConfiguration = configurations.find(
-    c =>
-      ((c.minWidth && c.minWidth <= width) || !c.minWidth) &&
-      ((c.maxWidth && c.maxWidth >= width) || !c.maxWidth)
+    ({ minWidth, maxWidth }) =>
+      ((minWidth && minWidth <= width) || !minWidth) &&
+      ((maxWidth && maxWidth >= width) || !maxWidth)
   );
   return {
     width,
-    cols: propsConfiguration ? propsConfiguration.cols : DEFAULT_COLS,
-    margin: propsConfiguration ? propsConfiguration.margin : DEFAULT_MARGIN
+    cols: propsConfiguration.cols || DEFAULT_COLS,
+    margin: propsConfiguration.margin || DEFAULT_MARGIN
   };
 };
 
-const Gallery2 = ({ photos, photoInfos, configurations }) => {
+const Gallery2 = ({ photos, photoInfos, configurations, withLightbox }) => {
   const ref = useRef(null);
   const [selectedImgId, setSelectedImgId] = useState(null);
   const [configuration, setConfiguration] = useState(null);
 
   const getWidth = () => {
-    const width = ref.current ? ref.current.offsetWidth : 0;
-    return width;
+    return ref.current.offsetWidth || 0;
   };
   useEffect(() => {
     const handleResize = _.debounce(
@@ -130,31 +131,37 @@ const Gallery2 = ({ photos, photoInfos, configurations }) => {
     <Wrapper ref={ref}>
       {photos.length ? (
         <Fragment>
-          {chunks.map((chunk, chunkIndex) => (
-            <LineContainer
-              height={chunk.lineHeight}
-              margin={configuration.margin}
-              key={`line-${chunkIndex}`}
-            >
-              {chunk.photos.map((p, imgIndex) => {
-                const index = chunkIndex * configuration.cols + imgIndex;
-                return (
-                  <Item
-                    src={p[photoInfos.default]}
-                    alt=""
-                    key={`item-${imgIndex}`}
-                    onClick={() => setSelectedImgId(index)}
-                  />
-                );
-              })}
-            </LineContainer>
-          ))}
-          <Ligthbox
-            img={displayLightbox(selectedImgId)}
-            onClose={closeLightbox}
-            onNext={photos.length - 1 > selectedImgId ? next : null}
-            onPrev={selectedImgId > 0 ? prev : null}
-          />
+          {chunks.map((chunk, chunkIndex) =>
+            chunk.lineHeight ? (
+              <LineContainer
+                height={chunk.lineHeight}
+                margin={configuration.margin}
+                key={`line-${chunkIndex}`}
+              >
+                {chunk.photos.map((p, imgIndex) => {
+                  const index = chunkIndex * configuration.cols + imgIndex;
+                  return (
+                    <Item
+                      src={p[photoInfos.default]}
+                      alt=""
+                      key={`item-${imgIndex}`}
+                      onClick={() => setSelectedImgId(index)}
+                    />
+                  );
+                })}
+              </LineContainer>
+            ) : (
+              ""
+            )
+          )}
+          {withLightbox && selectedImgId !== null && (
+            <Ligthbox
+              img={displayLightbox(selectedImgId)}
+              onClose={closeLightbox}
+              onNext={photos.length - 1 > selectedImgId ? next : null}
+              onPrev={selectedImgId > 0 ? prev : null}
+            />
+          )}
         </Fragment>
       ) : (
         <Loader />

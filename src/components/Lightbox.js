@@ -27,20 +27,19 @@ const Content = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  @media (max-width: 375px) {
-    height: 50%;
-  }
 `;
 
 const Image = styled.img`
   height: 100%;
+  margin: 0 auto;
 `;
 
-const ButtonContainer = styled.div``;
+const ButtonContainer = styled.div`
+  width: 5%;
+`;
 const Button = styled.span`
   color: white;
-  font-size: ${props => (props.fontSize === "small" ? "35px" : "55px")};
-  margin: 0 20px;
+  font-size: ${props => (props.fontSize === "small" ? "35px" : "50px")};
   @media (max-width: 768px) {
     font-size: ${props => (props.fontSize === "small" ? "35px" : "40px")};
   }

@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import FlickrAPI from "../services/FlickrAPI";
 import { EXTRAS } from "../constants/constants";
+import Gallery from "./Gallery";
 
 const { small320: def, large1024: big } = EXTRAS;
 const photoInfos = {
@@ -15,7 +16,6 @@ const PhotoLoader = ({
   photosetId,
   photos = [],
   setPhotos,
-  Component,
   configurations
 }) => {
   useEffect(() => {
@@ -28,7 +28,7 @@ const PhotoLoader = ({
   });
 
   return (
-    <Component
+    <Gallery
       photos={photos}
       photoInfos={photoInfos}
       configurations={configurations}

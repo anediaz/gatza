@@ -8,8 +8,6 @@ import Menu from "../components/Menu";
 import { home, makingof, menu } from "../data/data.json";
 import { Wrapper } from "../components/Gallery";
 import PhotoLoader from "../components/PhotoLoader";
-import Gallery from "../components/Gallery";
-import Gallery2 from "../components/Gallery2";
 
 const PageWrapper = styled.div`
   color: white;
@@ -114,7 +112,6 @@ const Page = () => {
                 photosetId={home}
                 photos={photosets[home]}
                 setPhotos={setPhotos}
-                Component={Gallery}
               />
             )}
           />
@@ -126,7 +123,6 @@ const Page = () => {
                 photosetId={makingof}
                 photos={photosets[makingof]}
                 setPhotos={setPhotos}
-                Component={Gallery2}
                 configurations={configurations}
               />
             )}

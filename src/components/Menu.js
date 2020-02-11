@@ -8,6 +8,9 @@ const Wrapper = styled.div`
   @media (max-width: 768px) {
     margin-top: 2rem;
   }
+  @media (min-width: 1920px) {
+    margin-top: 15rem;
+  }
 `;
 const Container = styled.ul`
   display: block;
@@ -43,8 +46,8 @@ const Element = styled.li`
       padding: 0.5rem 0.8rem;
     }
     @media (min-width: 1920px) {
-      font-size: 2.2rem;
-      padding: 0.5rem 3.5rem;
+      font-size: 5.2rem;
+      padding: 0.5rem 12.5rem;
     }
   }
 `;

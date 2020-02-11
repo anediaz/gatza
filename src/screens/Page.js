@@ -25,8 +25,8 @@ const Header = styled.div`
     height: 6.5rem;
   }
   @media (min-width: 1920px) {
-    padding-top: 3rem;
-    height: 15.4rem;
+    padding-top: 10rem;
+    height: 41rem;
   }
 `;
 
@@ -68,11 +68,11 @@ const LogoTitle = styled.div`
     }
   }
   @media (min-width: 1920px) {
-    height: 7rem;
+    height: 18rem;
     :before {
-      height: 7rem;
+      height: 18rem;
       width: 422px;
-      background-size: auto 7rem;
+      background-size: auto 18rem;
     }
   }
 `;

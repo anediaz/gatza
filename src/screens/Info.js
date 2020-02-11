@@ -10,7 +10,7 @@ const Wrapper = styled.div`
   background-color: black;
   @media (min-width: 1920px) {
     height: calc(100vw - 12.75rem);
-    padding-top: 2.5rem;
+    padding-top: 12rem;
   }
 `;
 
@@ -23,7 +23,7 @@ const Content = styled.div`
     padding-top: 1rem;
   }
   @media (min-width: 1920px) {
-    width: 55%;
+    width: 60%;
   }
 `;
 
@@ -51,7 +51,8 @@ const Text = styled.div`
     }
   }
   @media (min-width: 1920px) {
-    font-size: 1.6rem;
+    padding: 2rem 6rem 6rem;
+    font-size: 4.6rem;
   }
 `;
 
@@ -62,6 +63,9 @@ const Contact = styled.div`
   text-align: center;
   @media (max-width: 768px) {
     padding: 1rem 0;
+  }
+  @media (min-width: 1920px) {
+    padding: 6rem 6rem;
   }
 `;
 
@@ -75,8 +79,9 @@ const Title = styled.div`
     margin-bottom: 0.5rem;
   }
   @media (min-width: 1920px) {
-    font-size: 1.8rem;
-    margin-bottom: 0.5rem;
+    font-size: 4.5rem;
+    margin-bottom: 3.5rem;
+    font-weight: 600;
   }
 `;
 
@@ -90,8 +95,8 @@ const Line = styled.div`
     line-height: 1.2rem;
   }
   @media (min-width: 1920px) {
-    font-size: 1.5rem;
-    line-height: 2.5rem;
+    font-size: 4rem;
+    line-height: 11.5rem;
   }
 `;
 const A = styled.a`

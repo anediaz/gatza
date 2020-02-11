@@ -26,10 +26,10 @@ const Wrapper = styled.div`
     width: 70%;
   }
   @media (min-width: 1920px) {
-    width: 55%;
-    font-size: 1.4rem;
-    height: 2.5rem;
-    line-height: 2.5rem;
+    width: 60%;
+    font-size: 3.5rem;
+    height: 4.4rem;
+    line-height: 4.4rem;
   }
 `;
 

@@ -46,8 +46,8 @@ const Element = styled.li`
       padding: 0.5rem 0.8rem;
     }
     @media (min-width: 1920px) {
-      font-size: 5.2rem;
-      padding: 0.5rem 12.5rem;
+      font-size: 3rem;
+      padding: 0.5rem 10rem;
     }
   }
 `;

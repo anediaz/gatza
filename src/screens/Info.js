@@ -9,7 +9,6 @@ const Wrapper = styled.div`
   height: 100%;
   background-color: black;
   @media (min-width: 1920px) {
-    height: calc(100vw - 12.75rem);
     padding-top: 12rem;
   }
 `;

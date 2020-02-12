@@ -26,12 +26,12 @@ const Header = styled.div`
   }
   @media (min-width: 1920px) {
     padding-top: 10rem;
-    height: 41rem;
+    height: 35.4rem;
   }
 `;
 
 const Logo = styled.div`
-  width: 20%;
+  width: 100%;
   margin: 0 auto;
   text-align: center;
   &:hover {
@@ -68,11 +68,11 @@ const LogoTitle = styled.div`
     }
   }
   @media (min-width: 1920px) {
-    height: 18rem;
+    height: 15rem;
     :before {
-      height: 18rem;
+      height: 15rem;
       width: 422px;
-      background-size: auto 18rem;
+      background-size: auto 15rem;
     }
   }
 `;

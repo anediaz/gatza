@@ -160,7 +160,7 @@ const Gallery = ({ photos, photoInfos, configurations, withLightbox }) => {
                 })}
               </LineContainer>
             ) : (
-              ""
+              <Loader />
             )
           )}
           {withLightbox && selectedImgId !== null && (

@@ -1,13 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, Suspense, lazy } from "react";
 import styled from "styled-components";
 import { HashRouter, Route } from "react-router-dom";
-import Liburua from "./Liburua";
-import Info from "./Info";
-import Berriak from "./Berriak";
 import Menu from "../components/Menu";
 import { home, makingof, menu } from "../data/data.json";
 import { Wrapper } from "../components/Gallery";
 import PhotoLoader from "../components/PhotoLoader";
+import Loader from "../components/Loader";
 
 const PageWrapper = styled.div`
   color: white;
@@ -94,6 +92,11 @@ const Page = () => {
     { minWidth: 480, cols: 7, margin: 1 },
     { maxWidth: 479, cols: 4, margin: 1 }
   ];
+
+  const Liburua = lazy(() => import("./Liburua"));
+  const Berriak = lazy(() => import("./Berriak"));
+  const Info = lazy(() => import("./Info"));
+
   return (
     <HashRouter>
       <PageWrapper>
@@ -104,31 +107,33 @@ const Page = () => {
           <Menu items={menu} />
         </Header>
         <Container>
-          <Route
-            exact
-            path={menu[0].path}
-            render={() => (
-              <PhotoLoader
-                photosetId={home}
-                photos={photosets[home]}
-                setPhotos={setPhotos}
-              />
-            )}
-          />
-          <Route path={menu[1].path} component={Liburua} />
-          <Route
-            path={menu[2].path}
-            render={() => (
-              <PhotoLoader
-                photosetId={makingof}
-                photos={photosets[makingof]}
-                setPhotos={setPhotos}
-                configurations={configurations}
-              />
-            )}
-          />
-          <Route path={menu[3].path} component={Berriak} />
-          <Route path={menu[4].path} component={Info} />
+          <Suspense fallback={<Loader />}>
+            <Route
+              exact
+              path={menu[0].path}
+              render={() => (
+                <PhotoLoader
+                  photosetId={home}
+                  photos={photosets[home]}
+                  setPhotos={setPhotos}
+                />
+              )}
+            />
+            <Route path={menu[1].path} component={Liburua} />
+            <Route
+              path={menu[2].path}
+              render={() => (
+                <PhotoLoader
+                  photosetId={makingof}
+                  photos={photosets[makingof]}
+                  setPhotos={setPhotos}
+                  configurations={configurations}
+                />
+              )}
+            />
+            <Route path={menu[3].path} component={Berriak} />
+            <Route path={menu[4].path} component={Info} />
+          </Suspense>
         </Container>
       </PageWrapper>
     </HashRouter>

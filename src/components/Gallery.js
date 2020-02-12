@@ -1,9 +1,15 @@
-import React, { Fragment, useState, useEffect, useRef } from "react";
+import React, {
+  Fragment,
+  useState,
+  useEffect,
+  useRef,
+  lazy,
+  Suspense
+} from "react";
 import PropTypes from "prop-types";
 import _ from "underscore";
 import styled from "styled-components";
 import Loader from "./Loader";
-import Ligthbox from "./Lightbox";
 
 const propTypes = {
   configurations: PropTypes.arrayOf(
@@ -129,6 +135,7 @@ const Gallery = ({ photos, photoInfos, configurations, withLightbox }) => {
   };
 
   const chunks = getChunks(photos);
+  const Ligthbox = lazy(() => import("./Lightbox"));
   return (
     <Wrapper ref={ref}>
       {photos.length ? (
@@ -157,12 +164,14 @@ const Gallery = ({ photos, photoInfos, configurations, withLightbox }) => {
             )
           )}
           {withLightbox && selectedImgId !== null && (
-            <Ligthbox
-              img={displayLightbox(selectedImgId)}
-              onClose={closeLightbox}
-              onNext={photos.length - 1 > selectedImgId ? next : null}
-              onPrev={selectedImgId > 0 ? prev : null}
-            />
+            <Suspense fallback={<Loader />}>
+              <Ligthbox
+                img={displayLightbox(selectedImgId)}
+                onClose={closeLightbox}
+                onNext={photos.length - 1 > selectedImgId ? next : null}
+                onPrev={selectedImgId > 0 ? prev : null}
+              />
+            </Suspense>
           )}
         </Fragment>
       ) : (

@@ -48,6 +48,7 @@ const ButtonContainer = styled.div`
 const Button = styled.span`
   color: white;
   font-size: ${props => (props.fontSize === "small" ? "35px" : "50px")};
+  opacity: 0.6;
   @media (max-width: 768px) {
     font-size: ${props => (props.fontSize === "small" ? "35px" : "40px")};
   }

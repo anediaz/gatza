@@ -74,7 +74,9 @@ const getChosenConfiguration = (configurations, width) => {
 const Gallery = ({ photos, photoInfos, configurations, withLightbox }) => {
   const ref = useRef(null);
   const [selectedImgId, setSelectedImgId] = useState(null);
-  const [configuration, setConfiguration] = useState(null);
+  const [configuration, setConfiguration] = useState(
+    getChosenConfiguration(configurations, window.screen.width)
+  );
 
   const getWidth = () => {
     return ref.current.offsetWidth || 0;

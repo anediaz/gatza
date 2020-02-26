@@ -51,7 +51,7 @@ const Text = styled.div`
   }
   @media (min-width: 1920px) {
     padding: 2rem 4rem 6rem;
-    font-size: 3.5rem;
+    font-size: 3rem;
   }
 `;
 
@@ -78,8 +78,8 @@ const Title = styled.div`
     margin-bottom: 0.5rem;
   }
   @media (min-width: 1920px) {
-    font-size: 3.5rem;
-    margin-bottom: 3.5rem;
+    font-size: 3rem;
+    margin-bottom: 3rem;
     font-weight: 600;
   }
 `;
@@ -94,7 +94,7 @@ const Line = styled.div`
     line-height: 1.2rem;
   }
   @media (min-width: 1920px) {
-    font-size: 3.5rem;
+    font-size: 3rem;
     line-height: 11.5rem;
   }
 `;

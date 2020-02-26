@@ -27,7 +27,7 @@ const Wrapper = styled.div`
   }
   @media (min-width: 1920px) {
     width: 60%;
-    font-size: 3rem;
+    font-size: 2.5rem;
     height: 4.4rem;
     line-height: 4.4rem;
   }

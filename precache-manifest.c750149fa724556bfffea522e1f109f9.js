@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b81ede48b5a7d625d7055702180b4431",
+    "revision": "72d4dc088f1cb42339d2e9720701d02a",
     "url": "/gatza/index.html"
   },
   {
@@ -24,8 +24,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/gatza/static/js/5.4d414311.chunk.js"
   },
   {
-    "revision": "9d7e486a9014768ffe91",
-    "url": "/gatza/static/js/main.672c2d0a.chunk.js"
+    "revision": "30c8962fdc5dee7fcc42",
+    "url": "/gatza/static/js/main.f9661e81.chunk.js"
   },
   {
     "revision": "3f9daf189ddd1ef41eb5",

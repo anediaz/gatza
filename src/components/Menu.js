@@ -47,7 +47,7 @@ const Element = styled.li`
     }
     @media (min-width: 1920px) {
       font-size: 3rem;
-      padding: 0.5rem 10rem;
+      padding: 0.5rem 8rem;
     }
   }
 `;

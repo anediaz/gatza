@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "7949cd66b0bb22e98b901e3889ce109c",
+    "revision": "27ea8c93d02ce1f650c3934c2a0033cb",
     "url": "/gatza/index.html"
   },
   {
@@ -16,19 +16,19 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/gatza/static/js/3.acca6e7f.chunk.js"
   },
   {
-    "revision": "0ff76481eb1e14f7d3c9",
-    "url": "/gatza/static/js/4.9a673d52.chunk.js"
+    "revision": "e4a6aface056ab5846ae",
+    "url": "/gatza/static/js/4.01596535.chunk.js"
   },
   {
     "revision": "14492c40a18588e950dd",
     "url": "/gatza/static/js/5.4d414311.chunk.js"
   },
   {
-    "revision": "42fff506dc42f46bd55f",
-    "url": "/gatza/static/js/main.2b5be0ea.chunk.js"
+    "revision": "1ef1264cb5415f1ae0e9",
+    "url": "/gatza/static/js/main.f0f89e01.chunk.js"
   },
   {
-    "revision": "8980341ad4ce03785a1e",
-    "url": "/gatza/static/js/runtime-main.6aa7617c.js"
+    "revision": "ec707c85a599db590789",
+    "url": "/gatza/static/js/runtime-main.f3a1ee93.js"
   }
 ]);

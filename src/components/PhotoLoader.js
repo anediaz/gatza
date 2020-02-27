@@ -4,12 +4,6 @@ import { EXTRAS } from "../constants/constants";
 import Gallery from "./Gallery";
 
 const { small320: def, large1024: big } = EXTRAS;
-const photoInfos = {
-  default: def.url,
-  big: big.url,
-  width: def.width,
-  height: def.height
-};
 const urlsBySize = `${def.url},${big.url}`;
 
 const PhotoLoader = ({
@@ -21,19 +15,23 @@ const PhotoLoader = ({
   useEffect(() => {
     if (!photos || !photos.length) {
       FlickrAPI.getPhotos(photosetId, urlsBySize).then(
-        result => setPhotos(photosetId, result),
+        result => setPhotos(photosetId, transformResult(result)),
         error => console.log("error =" + error)
       );
     }
   });
 
-  return (
-    <Gallery
-      photos={photos}
-      photoInfos={photoInfos}
-      configurations={configurations}
-    />
-  );
+  const transformResult = result =>
+    result.map(r => {
+      return {
+        src: r[def.url],
+        width: r[def.width],
+        height: r[def.height],
+        bigSrc: r[big.url]
+      };
+    });
+
+  return <Gallery photos={photos} configurations={configurations} />;
 };
 
 export default PhotoLoader;

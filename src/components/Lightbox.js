@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
@@ -61,6 +62,18 @@ const Button = styled.span`
   }
 `;
 
+const propTypes = {
+  img: PropTypes.string.isRequired,
+  onClose: PropTypes.func,
+  onNext: PropTypes.func,
+  onPrev: PropTypes.func
+};
+
+const defaultProps = {
+  img: null,
+  onClose: () => {}
+};
+
 const previousText = "\x3C";
 const nextText = "\x3E";
 
@@ -87,4 +100,6 @@ const Ligthbox = ({ img, onClose, onNext, onPrev }) => (
   </Wrapper>
 );
 
+Ligthbox.propTypes = propTypes;
+Ligthbox.defaultProps = defaultProps;
 export default Ligthbox;

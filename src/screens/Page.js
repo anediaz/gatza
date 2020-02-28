@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { HashRouter, Route } from "react-router-dom";
 import Menu from "../components/Menu";
 import { home, makingof, menu } from "../data/data.json";
-import { Wrapper } from "../components/Gallery";
 import PhotoLoader from "../components/PhotoLoader";
 import Loader from "../components/Loader";
 
@@ -11,7 +10,6 @@ const PageWrapper = styled.div`
   color: white;
   background-color: black;
   font-family: "Raleway", sans-serif;
-  ${Wrapper} : margin-top: 0.1rem;
 `;
 
 const Header = styled.div`

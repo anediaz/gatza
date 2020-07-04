@@ -1,7 +1,7 @@
 # gatza
 Front-End application.
 
-Website : https://anediaz.github.io/gatz
+Website : https://anediaz.github.io/gatza
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

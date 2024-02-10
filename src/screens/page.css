@@ -1,0 +1,106 @@
+.page {
+  color: white;
+  background-color: black;
+  font-family: "Raleway", sans-serif;   
+  .header {
+    padding-top: 1.25rem;
+    background-color: black;
+    height: 11.4rem;
+    position: relative;  
+    .logo {
+      width: 100%;
+      margin: 0 auto;
+      text-align: center;
+      &:hover {
+        cursor: pointer;
+      }
+      .title{
+        height: 4rem;
+        padding: 0.5rem 0;
+        content: url("./gatza.png");
+        margin: 0 auto;
+        &:before {
+          height: 4rem;
+          width: 241px;
+          padding: 0.5rem 0;
+          background-image: url("./gatza.png");
+          background-size: auto 4rem;
+          display: inline-block;
+          content: "";
+          margin: 0 auto;
+          background-repeat: no-repeat;
+        }
+      }
+    } 
+  }
+
+  .container {
+    width: 100%;
+    float: left;
+    margin: 0 auto;
+    background-color: white;
+    min-height: calc(100vh - 7.3rem);
+  }
+
+  .footer {
+    clear: both;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 1rem;
+    a {
+      text-decoration: none;
+      color: white;
+      font-style: italic;
+      font-weight: bold;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .page {
+    .header {
+      padding-top: 0.8rem;
+      height: 6.5rem;
+      .logo {
+        width: 100%;
+        font-size: 0.8rem;
+        .title {
+          height: 1.8rem;
+          &:before {
+            height: 1.8rem;
+            width: 108px;
+            background-size: auto 1.8rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .page .footer {
+    font-size: 0.9rem;
+    padding: 1.2rem 1rem 0 0;
+  }   
+}
+
+@media (min-width: 1920px) {
+  .page {
+    .header {
+      padding-top: 10rem;
+      height: 35.4rem;
+      .logo{
+        .title {
+          height: 15rem;
+          &:before {
+            height: 15rem;
+            width: 422px;
+            background-size: auto 15rem;
+          }
+        }
+      }
+    }
+  }
+}

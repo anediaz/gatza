@@ -1,0 +1,57 @@
+.language-selector {
+  width: 50%;
+  margin: 0 auto;
+  height: 1.5rem;
+  line-height: 1.5rem;
+  font-size: 0.8rem;
+
+  .list {
+    margin: 0;
+    padding: 0;
+    text-align: right;
+    .element {
+      list-style-type: none;
+      display: inline;
+      opacity: 0.8;
+      font-weight: unset;
+      &.is-active {
+        opacity:1;
+        font-weight: 600;
+      }
+      &:hover {
+      cursor: pointer;
+      }
+      &:not(:first-child):before {
+        content: " | ";
+      }
+
+    }
+  }
+}
+
+@media screen and (max-width: 1920px) {
+  .language-selector {
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 768px) {
+  .language-selector {
+    font-size: 0.7rem;
+    width: 80%;
+    height: 1.5rem;
+    line-height: 1.5rem;
+  }
+}
+@media (max-width: 768px) {
+  .language-selector {
+    width: 70%;
+  }
+}
+@media (min-width: 1920px) {
+  .language-selector {
+    width: 60%;
+    font-size: 2.5rem;
+    height: 4.4rem;
+    line-height: 4.4rem;
+  }
+}

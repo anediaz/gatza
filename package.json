@@ -18,11 +18,10 @@
     "react-ikusi": "^1.0.8",
     "react-router-dom": "^5.1.2",
     "react-scripts": "^3.4.3",
-    "styled-components": "^4.4.1",
     "underscore": "^1.9.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "NODE_OPTIONS=--openssl-legacy-provider react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",

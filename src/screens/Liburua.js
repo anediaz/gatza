@@ -1,13 +1,13 @@
 import React from "react";
 import { liburua } from "../data/data.json";
-
+import liburuaImg from './liburua.png'
 import './liburua.css';
 
 const Liburua = () => (
   <div className="liburua">
     <a href={liburua.url} target="_blank" rel="noopener noreferrer">
       <img
-        src={`${process.env.PUBLIC_URL}/${liburua.src}`}
+        src={liburuaImg}
         title={liburua.title}
         alt={liburua.alt}
         className="content-image"

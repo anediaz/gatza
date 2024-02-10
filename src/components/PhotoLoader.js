@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import FlickrAPI from "../services/FlickrAPI";
 import { EXTRAS } from "../constants/constants";
-import Gallery from "react-ikusi";
+import { Gallery } from "react-ikusi";
 
 const { small320: def, large1024: big } = EXTRAS;
 const urlsBySize = `${def.url},${big.url}`;

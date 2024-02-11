@@ -76,5 +76,12 @@ module.exports = {
     'no-console': 'off',
     'no-debugger': 'off',
     'no-shadow': 'off',
+    'react/function-component-definition': [
+      2,
+      {
+        namedComponents: ['arrow-function', 'function-declaration'],
+        unnamedComponents: 'arrow-function',
+      },
+    ],
   },
 };

@@ -14,6 +14,7 @@
     "@types/node": "^20.11.17",
     "@types/react": "^18.2.55",
     "@types/react-dom": "^18.2.19",
+    "@types/react-router-dom": "^5.3.3",
     "@typescript-eslint/eslint-plugin": "^6.21.0",
     "@typescript-eslint/eslint-plugin-tslint": "^6.21.0",
     "@typescript-eslint/parser": "^6.21.0",
@@ -29,7 +30,7 @@
     "react-dom": "^18.2.0",
     "react-ga": "^3.1.2",
     "react-ikusi": "^3.1.3",
-    "react-router-dom": "^5.1.2",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "^4.0.0",
     "typescript": "^5.3.3",
     "underscore": "^1.9.1"

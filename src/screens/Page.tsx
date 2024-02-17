@@ -1,9 +1,11 @@
 import React, { useState, Suspense, lazy } from 'react';
+import { PhotoProps } from 'react-ikusi';
 import { HashRouter, Route } from 'react-router-dom';
 import { Menu } from '../components/Menu';
 import { MENU_DATA, PHOTOSET_IDS, WEBSITE_INFO } from '../services/data';
 import { PhotoLoader } from '../components/PhotoLoader';
 import './page.css';
+import { CONFIGURATIONS } from '../services/constants';
 
 const getFooter = () => {
   const clickableText = (
@@ -19,19 +21,19 @@ const getFooter = () => {
   ];
 };
 
-export const Page = () => {
-  const [photosets, setPhotosets] = useState({ home: [], makingof: [] });
+interface PhotosetsProps {
+  home: PhotoProps[];
+  makingof: PhotoProps[];
+}
 
-  const setPhotos = (photosetId:string, photos:any[]) => {
-    setPhotosets({ ...photosets, [photosetId]: photos });
-  };
-  const configurations = [
-    { minWidth: 1024, cols: 7, margin: 5 },
-    {
-      minWidth: 480, maxWidth: 1023, cols: 7, margin: 1,
-    },
-    { maxWidth: 479, cols: 4, margin: 1 },
-  ];
+export const Page = () => {
+  const [photosets, setPhotosets] = useState<PhotosetsProps>({ home: [], makingof: [] });
+
+  const setPhotos = React.useCallback((photosetId: 'home' | 'makingof', photos: PhotoProps[]) => {
+    if (photos.length && !photosets[photosetId].length) {
+      setPhotosets({ ...photosets, [photosetId]: photos });
+    }
+  }, [photosets, setPhotosets]);
 
   const {
     home, liburua, makingof, berriak, info,
@@ -59,7 +61,7 @@ export const Page = () => {
                 <PhotoLoader
                   photosetId={PHOTOSET_IDS.home}
                   photos={photosets.home}
-                  setPhotos={setPhotos}
+                  setPhotos={(newPhotos) => setPhotos('home', newPhotos)}
                 />
               )}
             />
@@ -70,8 +72,8 @@ export const Page = () => {
                 <PhotoLoader
                   photosetId={PHOTOSET_IDS.makingof}
                   photos={photosets.makingof}
-                  setPhotos={setPhotos}
-                  configurations={configurations}
+                  setPhotos={(newPhotos) => setPhotos('makingof', newPhotos)}
+                  configurations={CONFIGURATIONS}
                 />
               )}
             />

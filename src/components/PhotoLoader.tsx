@@ -1,39 +1,27 @@
 import React, { useEffect } from 'react';
 import { Gallery, PhotoProps, ConfigurationProps } from 'react-ikusi';
-import FlickrAPI from '../services/FlickrAPI';
-import { EXTRAS } from '../services/constants';
-
-const { small320: def, large1024: big } = EXTRAS;
-const urlsBySize = `${def.url},${big.url}`;
+import { usePhotos } from '../hooks/usePhotos';
 
 interface PhotoLoaderProps {
   photosetId: string;
-  photos?: PhotoProps[];
-  setPhotos: (photosetId: string, p:any[]) => void
-  configurations?: ConfigurationProps[],
+  configurations?: ConfigurationProps[];
+  photos: PhotoProps[];
+  setPhotos: (photos: PhotoProps[]) => void;
 }
-
-const transformResult = (result:any[]):any => result.map((r) => ({
-  src: r[def.url],
-  width: r[def.width],
-  height: r[def.height],
-  bigSrc: r[big.url],
-}));
 
 export const PhotoLoader = ({
   photosetId,
+  configurations,
   photos,
   setPhotos,
-  configurations,
-}:PhotoLoaderProps) => {
-  useEffect(() => {
-    if (!photos || !photos.length) {
-      FlickrAPI.getPhotos(photosetId, urlsBySize).then(
-        (result) => setPhotos(photosetId, transformResult(result)),
-        (error) => console.log(`error =${error}`),
-      );
-    }
-  });
+}: PhotoLoaderProps) => {
+  const { photos: fetchPhotos } = usePhotos({ photosetId, shouldFetch: !photos.length });
 
-  return <Gallery photos={photos || []} configurations={configurations} />;
+  useEffect(() => {
+    if (!photos.length && fetchPhotos.length) {
+      setPhotos(fetchPhotos);
+    }
+  }, [photos, fetchPhotos]);
+
+  return <Gallery photos={photos} configurations={configurations} />;
 };
